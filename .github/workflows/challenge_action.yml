@@ -1,0 +1,29 @@
+name: first_challenge
+
+on: push
+
+
+jobs:
+  ubuntu_job:
+    runs_on: ubuntu-latest
+    steps:
+      - name: show date ubuntu
+        run: date
+  windows_job:
+    runs_on: windows-latest
+    steps:
+      - name: show date windows
+        run: Get-Date
+  macos_job:
+    runs_on: macos-latest
+    steps:
+      - name: show date on macos
+        run: date
+  node_job:
+    runs_on: ubuntu-latest
+    needs: [ubuntu_job, windows_job, macos_job]
+    container: node:14.16
+    steps:
+      - name: show node version
+        run: node -v
+  
