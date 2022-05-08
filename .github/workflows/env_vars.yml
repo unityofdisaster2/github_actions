@@ -9,18 +9,17 @@ jobs:
   my_job:
     runs-on: ubuntu-latest
     steps:
-      env: 
-        MY_STEP_VARIABLE: 'my step variable'
-      run: | 
-        echo "accessing using unix syntax: \n\n"
-        echo "$MY_WORKFLOW_VARIABLE"
-        echo "$MY_STEP_VARIABLE"
-        echo "$GITHUB_ACTION_PATH"
-        echo "$GITHUB_ACTION_REPOSITORY"
-        echo "accessing using yml syntax: \n\n"
-        echo "${{ GITHUB_ACTOR }}"
-        echo "${{ GITHUB_BASE_REF }}"
-        echo "${{ GITHUB_EVENT_NAME }}"
-        echo "${{ GITHUB_REF_NAME }}"
-
-        
+      - name: print environment variables
+        env: 
+          MY_STEP_VARIABLE: 'my step variable'
+        run: | 
+          echo "accessing using unix syntax: \n\n"
+          echo "$MY_WORKFLOW_VARIABLE"
+          echo "$MY_STEP_VARIABLE"
+          echo "$GITHUB_ACTION_PATH"
+          echo "$GITHUB_ACTION_REPOSITORY"
+          echo "accessing using yml syntax: \n\n"
+          echo "${{ GITHUB_ACTOR }}"
+          echo "${{ GITHUB_BASE_REF }}"
+          echo "${{ GITHUB_EVENT_NAME }}"
+          echo "${{ GITHUB_REF_NAME }}"
