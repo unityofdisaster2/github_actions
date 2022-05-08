@@ -5,7 +5,7 @@ on: push
 jobs:
   os-and-version-matrix:
     strategy:
-      - matrix: 
+      matrix: 
         os: [ubuntu-latest, windows-latest, macos-latest]
         version: [10, 12, 14]
     runs-on: ${{ matrix.os}}
@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: ${{ matrix.version }}
       - name: check node version
-          run: node -v
+        run: node -v
