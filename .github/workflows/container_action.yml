@@ -16,6 +16,4 @@ jobs:
       - name: check node version
         run: node -v
       - name: test server
-        uses: wei/curl@master
-        with: 
-          args: localhost:8080
+        run: curl localhost:8080
