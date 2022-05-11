@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: check system info
-        run: systeminfo
+        run: cat /etc/os-release
   windows-job:
     runs-on: windows-latest
     steps: 
       - name: check system info
-        run: cat /etc/os-release
+        run: systeminfo
   macos-job:
     runs-on: macos-latest
     steps: 
