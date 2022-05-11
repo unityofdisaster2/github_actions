@@ -1,4 +1,4 @@
-name: multiple jobs
+name: container action
 
 on: push
 
