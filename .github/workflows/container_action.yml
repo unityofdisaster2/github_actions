@@ -11,7 +11,7 @@ jobs:
       nginx:
         image: nginx:latest
         ports: 
-          - 8080:8080
+          - 8080:80
     steps: 
       - name: check node version
         run: node -v
